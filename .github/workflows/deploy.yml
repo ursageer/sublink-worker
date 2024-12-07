@@ -34,8 +34,18 @@ jobs:
         run: |
           KV_NAMESPACE="SUBLINK_KV"
           echo "Checking for KV namespace: $KV_NAMESPACE"
-          LIST_OUTPUT=$(wrangler kv namespace list)
-          echo "KV namespace list output: $LIST_OUTPUT"
+          if ! LIST_OUTPUT=$(wrangler kv namespace list 2>&1); then
+            echo "Error getting KV namespace list: $LIST_OUTPUT"
+            exit 1
+          fi
+          
+          LIST_OUTPUT=$(echo "$LIST_OUTPUT" | grep -v "Cloudflare collects" | grep -v "telemetry")
+          echo "Cleaned KV namespace list output: $LIST_OUTPUT"
+          
+          if ! echo "$LIST_OUTPUT" | jq empty; then
+            echo "Invalid JSON output from wrangler"
+            exit 1
+          fi
           
           KV_ID=$(echo "$LIST_OUTPUT" | jq -r '.[] | select(.title == "sublink-worker-'$KV_NAMESPACE'") | .id')
           
