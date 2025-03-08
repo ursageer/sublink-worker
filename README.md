@@ -42,10 +42,11 @@
 
 ### 核心功能
 - 支持导入 Base64 的 http/https 订阅链接以及多种协议的分享URL
-- 一键部署，Vanilla JS + Cloudflare Worker，无需后端
+- 纯JavaScript + Cloudflare Worker实现，一键部署，开箱即用
 - 支持固定/随机短链接生成（基于 KV）
 - 浅色/深色主题切换
 - 灵活的 API，支持脚本化操作
+- 中文，英语，波斯语三语言支持
 
 ### 客户端支持
 - Sing-Box
@@ -69,9 +70,10 @@
 
 ## 📝 最近更新
 
-### 2024-11-30
-- 添加对 Shadowsocks 旧式 URL 的支持
-[查看完整更新日志](/docs/update-log.md)
+### 2025-03-08
+
+- 支持自定义UA
+- 全面使用Clash Meta的Rule Provider
 
 ## 🔧 项目结构
 
@@ -108,4 +110,10 @@
 
 感谢所有为本项目点亮 Star 的朋友们！🌟
 
-[![Star History Chart](https://api.star-history.com/svg?repos=7Sageer/sublink-worker&type=Date)](https://star-history.com/#7Sageer/sublink-worker&Date)
+<a href="https://star-history.com/#7Sageer/sublink-worker&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=7Sageer/sublink-worker&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=7Sageer/sublink-worker&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=7Sageer/sublink-worker&type=Date" />
+ </picture>
+</a>
