@@ -52,7 +52,7 @@
 ### Supported Protocols
 ShadowSocks • VMess • VLESS • Hysteria2 • Trojan • TUIC
 
-### Client Support123
+### Client Support
 Sing-Box • Clash • Xray/V2Ray • Surge
 
 ### Core Capabilities
